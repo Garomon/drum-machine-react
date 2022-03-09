@@ -83,11 +83,11 @@ function App() {
   };
 
   return (
-    <div className='bg-info min-vh-100 text-white'>
+    <div className='bg-info min-vh-100 text-white' id='drum-machine'>
       <div className="text-center">
-        <h2>Drum Machine</h2>
+        <h2 id='display'>Drum Machine</h2>
         {audioClips.map((clip) => (
-        <Pad key={clip.id} clip={clip} volume={volume} setRecording={setRecording} speed={speed}/>
+        <Pad  key={clip.id} clip={clip} volume={volume} setRecording={setRecording} speed={speed}/>
         ))}
       <br/>
       <h4>Volume</h4>
@@ -158,7 +158,7 @@ function Pad({clip, volume, setRecording}) {
   }
 
   return (
-    <div onClick={playSound} className={`btn btn-secondary p-4 m-3 ${active && 'btn-warning'}`}>
+    <div onClick={playSound} className={`drum-pad btn btn-secondary p-4 m-3 ${active && 'btn-warning'}`}>
       <audio className='clip' id={clip.keyTrigger} src={clip.url} />
       {clip.keyTrigger}
     </div>
